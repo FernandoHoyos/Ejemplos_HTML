@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas agrupacion, filas, columnas</title>
+    <style>
+        table, td, th {
+            border: 1px solid gray;
+            padding: 5px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--Como identificar las filas y columnas para hacer un diseño de tabla, ABRIR
+        Para eso hay que modificar y eliminar celdas
+        <table>
+            <tr>
+                <td>1.1</td>
+                <td>1.2</td>
+                <td>1.3</td>
+            </tr>
+            <tr>
+                <td>2.1</td>
+                <td>2.2</td>
+                <td>2.3</td>
+            </tr>
+            <tr>
+                <td>3.1</td>
+                <td>3.2</td>
+                <td>3.3</td>
+            </tr>
+            <tr>
+                <td>4.1</td>
+                <td>4.2</td>
+                <td>4.3</td>
+            </tr>
+        </table>
+
+    -->
+
+    <table><!--Las td comentadas son las que sobraron al hacer uniones-->
+        <tr>
+            <th rowspan="2">Programa</th><!--rowsspan es para agrupar filas-->
+            <th colspan="2">Curso</th><!--colspan es para agrupar columnas-->
+            <!--<td>1.3</td>-->
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <th>Duracion</th>
+            <!--<td>2.3</td>-->
+        </tr>
+        <tr>
+            <td rowspan="2">business integration</td>
+            <td>Persistencia</td>
+            <td>24 horas</td>
+        </tr>
+        <tr>
+            <td>Web Services</td>
+            <td>24 horas</td>
+            <!--<td>4.3</td>-->
+        </tr>
+    </table>   
+</body>
+</html>

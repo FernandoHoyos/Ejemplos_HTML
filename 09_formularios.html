@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <style>/*Las etiquetas que son inline no es posible asignarles un ancho*/
+        label {
+            width: 140px;
+            display: inline-block;/*Se cambia display para que se deje cambiar el ancho*/
+            /*TEST: para poder ver en color el tamaño de display
+            background-color: aqua;
+            */
+            vertical-align: top;/*Alinear etiquetas con display inline-block por la parte superior de los campos del formulario, esta va siempre en compañia con la etiqueta display*/
+        }
+    </style>
+    <script>
+        function enviar() {
+            window.alert('Has utillizado el boton enviar')
+        }
+    </script>
+</head>
+<body>
+    <form action="procesarformulario.php" method="get">
+        <p>
+            <label for="nombre">Nombre y apellidos: </label><!--for se usa para asociar el id -->
+            <input type="text" name="nombre" id="nombre" required pattern="[a-z A-Z]{1,90}" minlength="3" maxlength="20" autofocus><!--required hace que sea obligatorio rellenarlo. pattern hace que se acepten los caracteres que indiquemos-->
+        </p>
+        <p>
+            <label>Sueldo: </label>
+            <input type="number" name="sueldo" required min="12000" max="100000" step="0.01">
+        </p>
+        <p>
+            <label>Email: </label>
+            <input type="email" name="email" placeholder="nombre@dominio.ext">
+        </p>
+        <p>
+            <label>Teléfono</label>
+            <input type="tel" name="telefono" pattern="[0-9]{9}">
+        </p>
+        <p>
+            <label>Password: </label>
+            <input type="password" name="password">
+        </p>
+        <p>
+            <label>Hora</label>
+            <input type="time" name="Hora">
+        </p>
+        <p>
+            <label>Fecha nacimiento: </label>
+            <input type="date" name="fecha" value="2023-07-07" min="2023-01-01" max="2023-12-31"><!--fecha por defecto-->
+        </p>
+        <p>
+            <label>Provincia: </label>
+            <select name="provincia">
+                <!--el valor del atributo value es el que se envia al servidor en lujar del nombre de la provincia-->
+                <option value="" disabled selected>Selecciona una provincia</option><!--disable desactiva la etiqueta, pero con selected permite que sea la primera en sallir-->
+                <option value="T">Tarragona</option>
+                <option value="B">Barcelona</option>
+                <option value="G">Girona</option>
+                <option value="L">Lleida</option>
+            </select>
+        </p>
+        <p>
+            <label>Población:</label>
+            <input type="text" name="poblacion" list="poblaciones">
+            <datalist id="poblaciones"><!--Asociar el datalist a un input por medio del id-->
+                <option>Tarragona</option>
+                <option>Barcelona</option>
+                <option>Girona</option>
+                <option>Llerida</option>
+                <option>Sabadell</option>
+                <option>Hospitalet de Llobregat</option>
+                <option>Badalona</option>
+            </datalist>
+        </p>
+        <p>
+            <label>Radio Buttons</label>
+            <input type="radio" value="Si" name="opcion" checked>Si<!--Los radio buttons es obligatorio que este seleccionado uno por defecto-->
+            <input type="radio" value="No" name="opcion">No
+        </p>
+        <p>
+            <label>Color: </label>
+            <input type="color">
+        </p>
+        <p>
+            <label>Check Box</label>
+            <input type="checkbox" value="1" name="opciones">Opcion 1
+            <input type="checkbox" value="2" name="opciones">Opcion 2
+            <input type="checkbox" value="3" name="opciones">Opcion 3
+            <input type="checkbox" value="4" name="opciones" checked>Opcion 4
+        </p>
+        <p>
+            <label>Comentarios</label>
+            <textarea name="comentarios" cols="36" rows="2"></textarea>
+        </p>
+        <p>
+            <label>Archivo</label>
+            <input type="file" name="archivo">
+        </p>
+        <p>
+            <input type="submit" value="Enviar Consulta">
+            <input type="reset">
+            <input type="button" value="Enviar" onclick="enviar()">
+        </p>
+        <button><img src="img/gorro_cocina.png"></button><!--Esta etiqueta se puede utilizar cualquier cosa como boton-->
+
+    </form>
+    
+</body>
+</html>

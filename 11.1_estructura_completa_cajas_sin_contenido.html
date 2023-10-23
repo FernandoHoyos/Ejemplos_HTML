@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estructura web HTML 5</title>
+    <style>
+        .container {
+            width: 80%;/*ancho de la caja contenedora*/
+            margin: auto;/*Centrar la caja contenedora*//*funciona con cualquier etiqueta tipo display block*/
+            border: 2px solid blue;
+            padding: 10px;/*margen interior*/
+            max-width: 1200px;/*No permite que se espaguetice o se aplaste*/
+        }
+        header {
+            border: 2px solid green;
+            height: 80px;
+        }
+        nav {
+            border: 2px solid red;
+            height: 40px;
+            margin-top: 10px; /*margen exterior superior*/ /*para separar el nav del header*/
+        }
+        section {
+            border: 2px solid grey;
+            /*height: 200px;*//*Se quita esta altura para que no se salga las maregner del articulo*//*ESTO SE EVITA NO PONIENDO ALTOS EN LAS CAJAS CONTENEDORAS*/
+            margin-top: 10px;
+            padding: 10px;
+        }
+        footer {
+            border: 2px solid fuchsia;
+            height: 80px;
+            margin-top: 10px;
+        }
+        article {
+            border: 2px solid goldenrod;
+            height: 150px;
+            width: calc(50% - 6px);/*ancho de la caja*/
+            display: inline-block; /*display para que  las cajas se situen una al lado de las otras, en el caso aparezca una abajo de otra es porque no cabe al lado*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><img src="img/cascada.jpg" height="80px"></header>
+        <nav></nav>
+        <section>
+            <article></article>
+            <article></article>
+            <article></article>
+            <article></article>
+        </section>
+        <section>
+            <article></article>
+            <article></article>
+        </section>
+        <footer></footer>
+    </div>
+    
+</body>
+</html>
